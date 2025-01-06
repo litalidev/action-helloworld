@@ -1,5 +1,6 @@
 all:
-	g++ helloworld.cpp -o helloworld
+	mkdir -p bin/linux
+	g++ helloworld.cpp -o bin/linux/helloworld
 
 clean:
 	$(RM) helloworld
