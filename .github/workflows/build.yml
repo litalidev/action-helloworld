@@ -13,5 +13,5 @@ jobs:
     #- name: configure
     #run: ./configure
 
-    #- name: configure
-    #run: make
+    - name: make
+    run: make
