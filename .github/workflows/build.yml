@@ -23,3 +23,9 @@ jobs:
       with:
         name: helloworld
         path: ./helloworld
+
+    - name: upload to repo
+      uses: EndBug/add-and-commit@v9
+      with:
+        add: |
+          - helloworld
