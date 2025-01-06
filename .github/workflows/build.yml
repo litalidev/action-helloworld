@@ -14,4 +14,12 @@ jobs:
     #run: ./configure
 
     - name: make
-      run: make
+      run: |
+        make
+        ls -l
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+        with:
+          name: helloworld
+          path: ./helloworld
