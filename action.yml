@@ -1,4 +1,12 @@
+name: sample action file
+description: sample action file1
+author: me
+
 inputs:
+  versions:
+    required: false
+    default: 1.20.6
+    description: try this one
   version:
     description: 'Version of hello world'
     required: false

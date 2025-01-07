@@ -12,6 +12,7 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v4
 
+      - run : echo "xxx0 ${{ inputs.versions }}"
       - run : echo "xxx1 ${{ inputs.version }}"
       - run : echo "xxx2 ${{ inputs.version1 }}"
 
