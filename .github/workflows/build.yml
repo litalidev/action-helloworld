@@ -8,28 +8,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - run : echo "xxx1 ${{ inputs.version }}"
 
-    #- name: configure
-    #run: ./configure
+      - uses: actions/checkout@v4
 
-    - name: make
-      run: |
-        echo xxx
-        echo "Building helloworld version ${{ inputs.version }}"
-        echo "1  ${{ inputs.version.description }}"
-        echo "2  $INPUTS_VERSION"
-        make
-        ls -l
+      #- name: configure
+      #run: ./configure
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: helloworld
-        path: ./helloworld
+      - name: make
+        run: |
+          echo xxx
+          echo "Building helloworld version ${{ inputs.version }}"
+          echo "1  ${{ inputs.version.description }}"
+          echo "2  $INPUTS_VERSION"
+          make
+          ls -l
 
-    - name: upload to repo
-      uses: EndBug/add-and-commit@v9
-      with:
-        add: bin/linux/helloworld
-        message: 'Binary for Linux'
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: helloworld
+          path: ./helloworld
+
+      - name: upload to repo
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: bin/linux/helloworld
+          message: 'Binary for Linux'
