@@ -1,0 +1,4 @@
+helloworld.exe: helloworld.obj
+
+helloworld.obj: helloworld.cpp
+	cl /c helloworld.cpp

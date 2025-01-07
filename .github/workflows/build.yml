@@ -39,7 +39,9 @@ jobs:
           dir /s
           cmd /c "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe"
           call "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/vc/auxiliary/build/vcvars64.bat"
-          cl helloworld.cpp -o bin/win/x64/helloworld.exe
+          nmake -f NMakefile
+          dir /s
+      #cl helloworld.cpp -o bin/win/x64/helloworld.exe
 
       - name: upload to repo
         uses: EndBug/add-and-commit@v9
