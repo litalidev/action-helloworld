@@ -33,7 +33,7 @@ jobs:
           echo "This is Windows OS"
           dir
           cmd /c "set"
-          "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe"
+          cmd /c "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe"
           call vcvars64.bat
 
       - name: Upload artifact
