@@ -32,11 +32,17 @@ jobs:
         shell: cmd
         run: |
           echo "This is Windows OS"
-          dir
-          cmd /c "set"
+          #cmd /c "set"
+          cmd /c "mkdir -p bin\win\x64"
+          dir /s
           cmd /c "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe"
           call "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/vc/auxiliary/build/vcvars64.bat"
-          cl
+          cl helloworld.cpp -o bin/win/x64/helloworld.exe
+        - name: upload to repo
+          uses: EndBug/add-and-commit@v9
+          with:
+            add: bin/win/x64/helloworld.exe
+            message: 'Binary for Windows x64'
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
