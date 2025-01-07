@@ -16,9 +16,9 @@ jobs:
     - name: make
       run: |
         echo xxx
-        echo Building helloworld version ${{ inputs.version }}
-        echo 1  ${{ inputs.version.description }}
-        echo 2  $INPUTS_VERSION
+        echo "Building helloworld version ${{ inputs.version }}"
+        echo "1  ${{ inputs.version.description }}"
+        echo "2  $INPUTS_VERSION"
         make
         ls -l
 
