@@ -29,6 +29,7 @@ jobs:
 
       - name: windows make
         if: runner.os == 'Windows'
+        shell: cmd
         run: |
           echo "This is Windows OS"
           dir
