@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
 
-      - name: make
+      - name: linux make
         if: runner.os == 'Linux'
         steps:
           run: |
@@ -28,6 +28,7 @@ jobs:
             make
             ls -l
 
+      - name: windows make
         if: runner.os == 'Windows'
         steps:
           run: |
