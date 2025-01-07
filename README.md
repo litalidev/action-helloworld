@@ -1,4 +1,5 @@
 # action-helloworld
+![helloworld](https://github.com/litalidev/action-helloworld/actions/workflows/WORKFLOW-FILE/badge.svg)
 v1.0.0
 Demo of using github action
 - both linux and windows
