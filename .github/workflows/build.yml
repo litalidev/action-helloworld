@@ -1,6 +1,8 @@
 name: helloworld action
 
 on:
+  tags:
+    - "v*.*.*"
   push:
     branches: [ main ]
 
@@ -12,25 +14,10 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v4
 
-      - name: "test1"
-        uses : litalidev/action-helloworld@main
-        run : ls -l
-
-      - run : echo "xxx0 ${{ inputs.versions }}"
-      - run : echo "xxx1 ${{ inputs.version }}"
-      - run : echo "xxx2 ${{ inputs.version1 }}"
-      - run : ls -l
-
-
-      #- name: configure
-      #run: ./configure
 
       - name: make
         run: |
-          echo xxx
-          echo "Building helloworld version ${{ inputs.version }}"
-          echo "1  ${{ inputs.version.description }}"
-          echo "2  $INPUTS_VERSION"
+          echo "Building helloworld "
           make
           ls -l
 
@@ -45,3 +32,9 @@ jobs:
         with:
           add: bin/linux/helloworld
           message: 'Binary for Linux'
+
+      - name: upload to release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: bin/linux/helloworld
