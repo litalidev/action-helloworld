@@ -25,14 +25,14 @@ jobs:
         run: |
           echo "Building helloworld "
           make
-          ls -lR
+          ls -l
 
       - name: windows make
         if: runner.os == 'Windows'
         shell: cmd
         run: |
           echo "This is Windows OS"
-          #cmd /c "set"
+          cmd /c "set"
           cmd /c "mkdir -p bin\win\x64"
           dir /s
           cmd /c "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe"
