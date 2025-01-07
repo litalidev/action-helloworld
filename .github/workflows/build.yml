@@ -9,13 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout the repo
-        uses: actions/checkout@v4
+      - uses : litalide/action-helloworld
 
       - run : echo "xxx0 ${{ inputs.versions }}"
       - run : echo "xxx1 ${{ inputs.version }}"
       - run : echo "xxx2 ${{ inputs.version1 }}"
+      - run : ls -l
 
+      - name: Checkout the repo
+        uses: actions/checkout@v4
 
       #- name: configure
       #run: ./configure
