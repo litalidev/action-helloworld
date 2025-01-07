@@ -32,6 +32,9 @@ jobs:
         run: |
           echo "This is Windows OS"
           dir
+          set
+          "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe"
+          call vcvars64.bat
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
