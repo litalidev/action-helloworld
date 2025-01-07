@@ -66,4 +66,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: bin/linux/helloworld
+          files: |
+            bin/linux/helloworld
+            bin/win/x64/helloworld.exe
