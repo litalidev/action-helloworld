@@ -3,3 +3,7 @@ inputs:
     description: 'Version of hello world'
     required: false
     default: '1.0.3'
+  version1:
+    description: 'Version of hello world'
+    required: false
+    default: "1.0.4"

@@ -8,9 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run : echo "xxx1 ${{ inputs.version }}"
 
-      - uses: actions/checkout@v4
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+
+      - run : echo "xxx1 ${{ inputs.version }}"
+      - run : echo "xxx2 ${{ inputs.version1 }}"
+
 
       #- name: configure
       #run: ./configure
