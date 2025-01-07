@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         #os: [ubuntu-latest, windows-latest]
-        os: [ubuntu-latest]
+        os: [windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
 
@@ -19,14 +19,16 @@ jobs:
         uses: actions/checkout@v4
 
 
-      - name: linux make
+      - name: make
         if: runner.os == 'Linux'
         run: |
           echo "Building helloworld "
           make
           ls -l
         if: runner.os == 'Windows'
-        run: dir
+        run: |
+          echo "This is Windows OS"
+          dir
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
