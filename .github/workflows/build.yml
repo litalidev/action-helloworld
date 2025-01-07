@@ -22,18 +22,16 @@ jobs:
 
       - name: linux make
         if: runner.os == 'Linux'
-        steps:
-          run: |
-            echo "Building helloworld "
-            make
-            ls -l
+        run: |
+          echo "Building helloworld "
+          make
+          ls -l
 
       - name: windows make
         if: runner.os == 'Windows'
-        steps:
-          run: |
-            echo "This is Windows OS"
-            dir
+        run: |
+          echo "This is Windows OS"
+          dir
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
