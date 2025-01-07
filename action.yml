@@ -1,0 +1,5 @@
+inputs:
+  version:
+    description: 'Version of hello world'
+    required: false
+    default: '1.0.3'
