@@ -9,15 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses : litalidev/action-helloworld@main
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+
+      - name: "test1"
+        uses : litalidev/action-helloworld@main
+        run : ls -l
 
       - run : echo "xxx0 ${{ inputs.versions }}"
       - run : echo "xxx1 ${{ inputs.version }}"
       - run : echo "xxx2 ${{ inputs.version1 }}"
       - run : ls -l
 
-      - name: Checkout the repo
-        uses: actions/checkout@v4
 
       #- name: configure
       #run: ./configure
